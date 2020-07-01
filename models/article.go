@@ -1,6 +1,17 @@
 package models
 
 type Article struct {
+	Id    int    `xorm:"not null pk autoincr comment('') INT(11)" json:"id"`
+	Title string `xorm:"comment('标题')" json:"title"`
+
+	Keywords    string `xorm:"comment('关键词')" json:"keywords"`
+	Description string `xorm:"comment('内容描述')" json:"description"`
+
+	Content string `xorm:"comment('')" json:"content"`
+	Typeid  int    `xorm:"comment('分类')" json:"typeid"`
+}
+
+type Article2 struct {
 	Id             int    `xorm:"not null pk autoincr comment('') INT(11)" json:"id"`
 	Title          string `xorm:"comment('标题')" json:"title"`
 	Style          string `xorm:"comment('标题颜色')" json:"style"`
